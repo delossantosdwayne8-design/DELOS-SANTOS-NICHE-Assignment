@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Public Holidays Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>🌍 Holiday Explorer</h1>
+      <p>Discover national holidays and track upcoming celebrations worldwide.</p>
+    </header>
+
+    <!-- Controls Section -->
+    <section class="controls-card">
+      <div class="control-group">
+        <label for="country-select">Country</label>
+        <select id="country-select">
+          <option value="">Loading countries...</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="year-select">Year</label>
+        <select id="year-select">
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026" selected>2026</option>
+          <option value="2027">2027</option>
+        </select>
+      </div>
+
+      <div class="control-group search-group">
+        <label for="search-input">Filter by Name</label>
+        <input type="text" id="search-input" placeholder="e.g. Christmas, Independence..." />
+      </div>
+    </section>
+
+    <!-- Live Countdown Banner -->
+    <section id="countdown-card" class="countdown-card hidden">
+      <div class="countdown-header">
+        <div class="countdown-badge">⏳ Next Upcoming Holiday</div>
+        <h2 id="countdown-title" class="countdown-title">--</h2>
+        <p id="countdown-date" class="countdown-date">--</p>
+      </div>
+      <div class="countdown-timer">
+        <div class="time-box"><span id="cd-days">00</span><label>Days</label></div>
+        <div class="time-box"><span id="cd-hours">00</span><label>Hours</label></div>
+        <div class="time-box"><span id="cd-mins">00</span><label>Mins</label></div>
+        <div class="time-box"><span id="cd-secs">00</span><label>Secs</label></div>
+      </div>
+    </section>
+
+    <!-- Status & Counter -->
+    <div class="status-bar">
+      <span id="status-message" class="status-message">Select options to load holidays</span>
+      <span id="results-count" class="results-count"></span>
+    </div>
+
+    <!-- Holidays Container Grid -->
+    <main id="holidays-grid" class="holidays-grid"></main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
